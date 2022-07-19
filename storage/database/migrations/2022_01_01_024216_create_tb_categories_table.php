@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_categorys', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tb_categories', function (Blueprint $table) {
+            $table->id('id_category');
+            $table->string('nm_category',90);
+            
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_categorys');
+        Schema::dropIfExists('tb_categories');
     }
 };
