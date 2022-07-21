@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_storages', function (Blueprint $table) {
-            $table->id('id_storage');
-            $table->unsignedBigInteger('fk_product');
-            
+        Schema::create('tb_status', function (Blueprint $table) {
+            $table->id('id_status');
+            $table->string('nm_status');
             $table->timestamps();
-
-            $table->foreign('fk_product')->references('id_product')->on('tb_products');
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_storages');
+        Schema::dropIfExists('tb_status');
     }
 };

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/layout/default.css">
+    <link rel="stylesheet" href="/css/layout/form.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +13,8 @@
 
     @section('content')
     <div class="container">
-    <form name="register.user.form">
+    <form name="registerform">
+        @csrf
         <label for="">Nome</label>
         <input type="text" name="name">
         <label for="">Email</label>
@@ -24,6 +26,33 @@
         <input type="submit" value="Cadastrar">
     </form>
     </div>
+
+<script src="/js/jquery.js"></script>
+    <script>
+$(function(){
+    //pega html obj
+    $('form[name="registerform"]').submit(function(){
+        //previne que a página de refresh;
+        event.preventDefault();
+        //ajax do jquery
+        $.ajax(
+            {
+                url:"{{route('action.register')}}",
+                type:"post",
+                data: $(this).serialize(),
+                dataType:'json',
+                success: function(data) 
+                {
+                    if(data.register===true)
+                    {
+                        alert('Cadastro realizado com sucesso!');
+                        window.location.href="/login";
+                    }
+                }
+            });
+    });
+});
+</script>
     @endsection
 </body>
 </html>

@@ -1,0 +1,53 @@
+section.products
+{
+    background-color: cadetblue;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2vw;
+    border-radius: 9px;
+    display: flex;
+}
+div.product
+{
+    background-color: cornflowerblue;
+    width: 21%;
+    border: solid 1px;
+
+
+}
+img.imgproduct
+{
+    width: 9vw;
+    margin: 0 auto;
+    display: block;
+}
+.title-product
+{
+text-align: center;
+}
+.desc-product
+{ 
+    margin-left: 1vw;
+    margin-right: 1vw;
+    word-wrap: break-word;
+}
+.link-product
+{
+    text-align: center;
+}
+.div-a
+{
+    text-align: center;
+}
+.button-product
+{
+    background-color: aqua; 
+    padding: 9px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom:3px ;
+}
+#title
+{
+    text-align: center;
+}

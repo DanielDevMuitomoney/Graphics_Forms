@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('id_product');
             $table->string('nm_product');
             $table->text('ds_product');
+            $table->integer('qtd_product');
             $table->unsignedBigInteger('fk_category');
             $table->timestamps();
 
