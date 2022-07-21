@@ -118,9 +118,12 @@ public function action_login(Request $request)
         'nm_email' => $request->email,
         'password' => $request->password
     ];
-    
+
+  
     if(Auth::attempt($credenciais))
     {
+        
+       
         $json['login']=true;
         echo json_encode($json);
         return;

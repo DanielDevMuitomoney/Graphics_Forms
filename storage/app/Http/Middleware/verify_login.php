@@ -21,8 +21,7 @@ class verify_login
         {
             return $next($request);
         }
-        else
-        {
+        else{
             return redirect('/login');
         }
     }
