@@ -114,6 +114,7 @@ class UserController extends Controller
    
 public function action_login(Request $request)
 {
+    
     $credenciais = [
         'nm_email' => $request->email,
         'password' => $request->password

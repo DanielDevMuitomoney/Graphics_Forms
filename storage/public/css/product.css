@@ -1,0 +1,53 @@
+#container-product
+{
+    background-color: cadetblue;
+    width: 50%;
+    margin: 20px auto;
+    padding: 3vw;
+    border: solid 9px black;
+}
+#img-product
+{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    align-self: flex-start;
+}
+#desc-product
+{
+    text-align: center;
+}
+#title-product
+{
+    text-align: center;
+    margin-bottom: 9px;
+}
+#btn-request
+{
+    width: 100%;
+    background-color: chartreuse;
+    padding: 9px;
+    border-radius: 6px;
+}
+a#btn-link
+{
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+}
+#infos
+{
+    display: flex;
+    border: solid;
+    justify-content: center;
+    align-items: center;
+}
+#infos img
+{
+    width: 14vw;
+}
+
+
+
+
+

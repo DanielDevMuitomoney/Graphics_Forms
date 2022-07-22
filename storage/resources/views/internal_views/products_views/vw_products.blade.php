@@ -14,12 +14,14 @@
 
     <h1 id="title">Bem-vindo ao estoque</h1>
     <section class="products">
+        @foreach($products as $p)
         <div class="product">
-            <h3 class="title-product">Title Item</h3>
+            <h3 class="title-product">{{$p->nm_product}}</h3>
             <img class="imgproduct" src="https://guiademarketing.com.br/wp-content/uploads/2017/04/produtos.jpg" alt="">
-            <p class="desc-product">Desc itemddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-            <div class="div-a"><a class="link-product" href="#"><button class="button-product">Acessar</button></a></div>
+            <p class="desc-product">{{$p->ds_product}}</p>
+            <div class="div-a"><a class="link-product" href="produto/{{$p->id_product}}"><button class="button-product">Acessar</button></a></div>
         </div>
+        @endforeach
     </section>
     @endsection
 </body>
