@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmController;
 use App\Http\Controllers\products_controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -20,13 +21,20 @@ Route::get('/', function () {
 });
 
 Route::get('/login',[UserController::class,'ShowFormLogin'])->name('user.login');
+
 Route::get('/cadastro',[UserController::class,'ShowRegisterForm'])->name('user.register');
+
 // verifica login
 Route::middleware(['verify_login'])->group(function (){
     Route::get('/produtos',[ProductController::class,'ShowProducts'])->name('products.show');
 });
+
 Route::get('/produto/{id_product}',[ProductController::class,'ShowProduct'])->name('product.show');
 
+//!!!!!!!!!!!!!!!!!!dps add o verify adm!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Route::middleware(['verify_login'])->group(function (){
+    Route::get('/adm',[AdmController::class,'ShowAdmArea'])->name('adm.show');
+});
 //--------------------------------------->END VIEWS <------------------------------
 
 //--------------------------------------->START ROUTES <---------------------------

@@ -4,7 +4,7 @@
         <li class="nav-item">Inventário</li>
         <li class="nav-item">Minhas Requisições</li>
         @if(Auth::user()->fk_typeuser==2)
-        <li class="nav-item">Administração</li>
+        <a href="{{route('adm.show')}}"><li class="nav-item">Administração</li></a>
         @endif
     </ul>
 </nav>

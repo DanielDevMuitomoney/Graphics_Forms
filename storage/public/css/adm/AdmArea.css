@@ -1,0 +1,41 @@
+.adm-tool
+{
+    background-color: cornflowerblue;
+    border: solid;
+    width: 25%;
+    padding: 0.5vw;
+    margin-left: 5px;
+
+}
+.adm-tool img
+{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    height: 70%;
+}
+.adm-tool p,h3
+{
+    text-align: center;
+}
+#container
+{
+    padding: 2%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(25, 145, 210, 0.742);
+}
+section
+{
+    display: flex;
+    width: 100%;
+}
+.adm-tool button
+{
+    padding: 9px;
+    background-color: chartreuse;
+}
+.link-btn
+{
+
+}
