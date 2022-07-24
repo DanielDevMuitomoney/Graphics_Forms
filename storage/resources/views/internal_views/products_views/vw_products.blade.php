@@ -17,7 +17,7 @@
         @foreach($products as $p)
         <div class="product">
             <h3 class="title-product">{{$p->nm_product}}</h3>
-            <img class="imgproduct" src="https://guiademarketing.com.br/wp-content/uploads/2017/04/produtos.jpg" alt="">
+            <img class="imgproduct" src="/img/products/{{$p->path_img}}" alt="">
             <p class="desc-product">{{$p->ds_product}}</p>
             <div class="div-a"><a class="link-product" href="produto/{{$p->id_product}}"><button class="button-product">Acessar</button></a></div>
         </div>

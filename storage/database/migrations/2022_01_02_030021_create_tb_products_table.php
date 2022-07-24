@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nm_product');
             $table->text('ds_product');
             $table->integer('qtd_product');
+            $table->string('path_img')->default("/img/products/default.jpg");
             $table->unsignedBigInteger('fk_category');
             $table->timestamps();
 

@@ -31,9 +31,13 @@ Route::middleware(['verify_login'])->group(function (){
 
 Route::get('/produto/{id_product}',[ProductController::class,'ShowProduct'])->name('product.show');
 
+
+
 //!!!!!!!!!!!!!!!!!!dps add o verify adm!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Route::middleware(['verify_login'])->group(function (){
     Route::get('/adm',[AdmController::class,'ShowAdmArea'])->name('adm.show');
+    Route::get('/cadastro-produtos',[AdmController::class,'ShowRegisterProduct']);
+    Route::post('/register-product',[AdmController::class,'register_product'])->name('adm.register');
 });
 //--------------------------------------->END VIEWS <------------------------------
 

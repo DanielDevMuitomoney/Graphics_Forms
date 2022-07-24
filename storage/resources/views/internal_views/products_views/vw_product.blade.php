@@ -16,7 +16,7 @@
         <section id="product">
             
             <h2 id="title-product">{{$product->nm_product}}</h2>
-            <img id="img-product" src="https://guiademarketing.com.br/wp-content/uploads/2017/04/produtos.jpg" alt="">
+            <img id="img-product" src="/img/products/{{$product->path_img}}" alt="">
             <p id="desc-product">{{$product->ds_product}}</p>
             <a id="btn-link" href="#"><button id="btn-request">Requisitar</button></a>
             

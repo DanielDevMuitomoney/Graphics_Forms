@@ -1,0 +1,26 @@
+h1
+{
+    text-align: center;
+}
+form
+{
+    padding: 9px;
+    font-size: large;
+    border: solid 3px ;
+    background-color: cadetblue;
+    width: 40vw;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3vh;
+}
+form input,label,select
+{
+display: block;
+margin: 0 auto;
+text-align: center;
+margin-bottom: 2vw;
+}
+input
+{
+    width: 65%;
+}
