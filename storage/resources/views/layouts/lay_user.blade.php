@@ -7,7 +7,7 @@
         <a href="{{route('adm.show')}}"><li class="nav-item">Administração</li></a>
         @endif
         @if(Auth::check())
-        <a href="{{route('home.show')}}"><li class="nav-item">Logout</li></a>
+        <a href="{{route('action.logout')}}"><li class="nav-item">Logout</li></a>
         @endif
     </ul>
 </nav>

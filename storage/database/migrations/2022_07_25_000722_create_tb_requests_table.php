@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('fk_user_create');
             $table->unsignedBigInteger('fk_product');
-            $table->integer('11');
+            $table->integer('qtd_product');
             $table->unsignedBigInteger('fk_status');
             $table->unsignedBigInteger('fk_user_update');
             $table->dateTime('dt_close');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RequestModel;
 use Illuminate\Http\Request;
 use PhpParser\Builder\Function_;
 use App\Models\User;
@@ -139,7 +140,13 @@ public function action_login(Request $request)
 public function logout()
 {
     Auth::logout();
-    redirect()->route('home.show');
+    
+    return redirect()->route('home.show');
+}
+public function Request_Product(Request $request)
+{
+    $product_request= new RequestModel();
+    dd($request);
 }
 
 

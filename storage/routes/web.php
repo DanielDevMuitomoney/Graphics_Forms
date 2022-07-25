@@ -45,4 +45,6 @@ Route::middleware(['verify_login'])->group(function (){
 Route::post('/login',[UserController::class,'action_login'])->name('action.login');
 Route::post('/cadastro',[UserController::class,'Register'])->name('action.register');
 Route::get('/logout',[UserController::class,'logout'])->name('action.logout');
+
+Route::post('/request-product',[UserController::class,'Request_Product'])->name('user.request');
 //--------------------------------------->END ROUTES <-----------------------------
