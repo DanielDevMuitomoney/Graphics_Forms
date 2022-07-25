@@ -136,6 +136,11 @@ public function action_login(Request $request)
         return;
     }
 }
+public function logout()
+{
+    Auth::logout();
+    redirect()->route('home.show');
+}
 
-    
+
 }

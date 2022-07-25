@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/layout/default.css">
     <link rel="stylesheet" href="/css/adm/AdmArea.css">
+    
     <title>Document</title>
 </head>
 <body>
@@ -30,13 +31,16 @@
             </div>
 
             <div class="adm-tool">
-                <h3>Gerenciar pedidos</h3>
+                <h3>Cadastrar Produto</h3>
                 <img src="https://dendriteitsol.com/images/ecom-solutions.png" alt="users tool">
                 <p>Ferramenta de administração, capaz de gerenciar os usuários</p>
-                <a class="link-btn"><button>ACESSAR</button></a>
+                <a href="{{route('adm.register.show')}}" class="link-btn"><button>ACESSAR</button></a>
             </div>
         </section>
     </div>
+
+
+    
     @endsection
 </body>
 </html>

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //--------------------------------------->START VIEWS <------------------------------
 Route::get('/', function () {
     return view('vw_home');
-});
+})->name('home.show');
 
 Route::get('/login',[UserController::class,'ShowFormLogin'])->name('user.login');
 
@@ -36,7 +36,7 @@ Route::get('/produto/{id_product}',[ProductController::class,'ShowProduct'])->na
 //!!!!!!!!!!!!!!!!!!dps add o verify adm!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Route::middleware(['verify_login'])->group(function (){
     Route::get('/adm',[AdmController::class,'ShowAdmArea'])->name('adm.show');
-    Route::get('/cadastro-produtos',[AdmController::class,'ShowRegisterProduct']);
+    Route::get('/cadastro-produtos',[AdmController::class,'ShowRegisterProduct'])->name('adm.register.show');
     Route::post('/register-product',[AdmController::class,'register_product'])->name('adm.register');
 });
 //--------------------------------------->END VIEWS <------------------------------
@@ -44,4 +44,5 @@ Route::middleware(['verify_login'])->group(function (){
 //--------------------------------------->START ROUTES <---------------------------
 Route::post('/login',[UserController::class,'action_login'])->name('action.login');
 Route::post('/cadastro',[UserController::class,'Register'])->name('action.register');
+Route::get('/logout',[UserController::class,'logout'])->name('action.logout');
 //--------------------------------------->END ROUTES <-----------------------------
