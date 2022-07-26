@@ -27,6 +27,7 @@ Route::get('/cadastro',[UserController::class,'ShowRegisterForm'])->name('user.r
 // verifica login
 Route::middleware(['verify_login'])->group(function (){
     Route::get('/produtos',[ProductController::class,'ShowProducts'])->name('products.show');
+    Route::get('/requisicoes',[UserController::class,'ShowRequests'])->name('requests.show');
 });
 
 Route::get('/produto/{id_product}',[ProductController::class,'ShowProduct'])->name('product.show');

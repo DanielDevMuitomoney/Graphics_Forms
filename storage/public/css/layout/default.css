@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *
 {
+    font-family: 'Roboto';
+    font-weight: bold;
     margin: 0;
     padding: 0;
 }
@@ -19,4 +22,24 @@ nav
 {
     padding: 9px;
     background-color: black;
+}
+/*Alerts*/
+.display-none
+{
+    display: none;
+}
+.success{
+    background-color: rgba(9, 204, 9, 0.652);
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
+}
+.danger
+{
+    background-color: rgba(225, 9, 9, 0.652);
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    color: white;
 }

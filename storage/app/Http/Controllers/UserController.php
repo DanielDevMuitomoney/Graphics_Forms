@@ -144,9 +144,46 @@ public function logout()
     return redirect()->route('home.show');
 }
 public function Request_Product(Request $request)
+{       //1
+    $Model_verify_request= RequestModel::where('fk_user_create',Auth::user()->id_user)->where('fk_product','=',$request->product)->count();
+    
+
+    if($Model_verify_request===0){
+        //2
+        if(is_numeric($request->qtd)){
+        $RequestModel= new RequestModel();
+        $RequestModel->qtd_request_product =$request->qtd;
+        $RequestModel->fk_product=$request->product;
+        $RequestModel->fk_user_create= Auth::user()->id_user;
+        $RequestModel->fk_status=1 /*Pendente*/;
+        
+        $RequestModel->save();
+        $json['success']=true;
+        echo json_encode($json);
+        //2
+        }
+        else
+        {
+            $json['success']=false;
+            $json['error']='quantidade inválida';
+            echo json_encode($json);
+        }
+    //1
+    }
+    else
+    {
+        $json['error']='Você já tem um pedido pendente deste produto, para ver seus pedidos clique em Minhas Requisições';
+        echo json_encode($json);
+    }
+}
+public function ShowRequests()
 {
-    $product_request= new RequestModel();
-    dd($request);
+    $requests= DB::table('tb_requests')->join('tb_products','tb_requests.fk_product','=','tb_products.id_product')->join('tb_status','fk_status','=','id_status')->select(['nm_product','qtd_request_product','nm_status','dt_create'])->get();
+    
+    
+    return view('internal_views.user_views.vw_requests',[
+        'requests' => $requests
+    ]);
 }
 
 

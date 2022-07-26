@@ -14,13 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_requests', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_request');
             $table->unsignedBigInteger('fk_user_create');
             $table->unsignedBigInteger('fk_product');
-            $table->integer('qtd_product');
+            $table->integer('qtd_request_product');
             $table->unsignedBigInteger('fk_status');
-            $table->unsignedBigInteger('fk_user_update');
-            $table->dateTime('dt_close');
+            $table->unsignedBigInteger('fk_user_update')->nullable();
+            $table->dateTime('dt_create')->default(now());
+            $table->dateTime('dt_close')->nullable();
 
             $table->timestamps();
 
