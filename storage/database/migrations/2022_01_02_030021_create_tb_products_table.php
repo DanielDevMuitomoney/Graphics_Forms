@@ -18,9 +18,12 @@ return new class extends Migration
             $table->string('nm_product');
             $table->text('ds_product');
             $table->integer('qtd_product');
+            $table->unsignedBigInteger('fk_user_create');
             $table->string('path_img')->default("/img/products/default.jpg");
             $table->unsignedBigInteger('fk_category');
             $table->timestamps();
+
+            $table->foreign('fk_user_create')->references('id_user')->on('users');
 
             $table->foreign('fk_category')->references('id_category')->on('tb_categories');
         });

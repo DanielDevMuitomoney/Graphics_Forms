@@ -21,3 +21,46 @@ th,td
     background-color: aqua;
     border-radius: 9px;
 }
+.danger-btn
+{
+    margin-left: 5px;
+    padding: 9px;
+    background-color: rgb(255, 0, 30);
+    border-radius: 9px;
+}
+#pdf-btn
+{
+    padding: 24px;
+    background-color: rgba(200, 14, 86, 0.793);
+    border-radius: 9px;
+}
+#excel-btn
+{
+    padding: 24px;
+    background-color: rgba(14, 200, 98, 0.793);
+    border-radius: 9px;
+}
+#tools
+{
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+}
+.alert
+{
+    width: 40%;
+    padding: 15px;
+    margin: 0 auto;
+}
+.dispay-none
+{
+    display: none;
+}
+.info
+{
+    background-color: rgba(0, 255, 255, 0.644);
+}
+.info img
+{
+    width: 20%;
+}

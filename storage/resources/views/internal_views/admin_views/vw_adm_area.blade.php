@@ -18,7 +18,7 @@
         <section>
             <div class="adm-tool">
                 <h3>Gerenciar usuários</h3>
-                <img src="https://www.seekpng.com/png/detail/548-5486321_royalty-free-user-profile-icons-free-people-e.png" alt="users tool">
+                <img src="" alt="users tool">
                 <p>Ferramenta de administração, capaz de gerenciar os usuários</p>
                 <a><button>ACESSAR</button></a>
             </div>
@@ -27,7 +27,7 @@
                 <h3>Gerenciar pedidos</h3>
                 <img src="https://dendriteitsol.com/images/ecom-solutions.png" alt="users tool">
                 <p>Ferramenta de administração, capaz de gerenciar os usuários</p>
-                <a class="link-btn"><button>ACESSAR</button></a>
+                <a href="{{route('adm.manage')}}" class="link-btn"><button>ACESSAR</button></a>
             </div>
 
             <div class="adm-tool">

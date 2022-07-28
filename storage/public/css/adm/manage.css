@@ -1,0 +1,26 @@
+.table
+{
+    border: solid 5px;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 2vw;
+}
+th,td
+{
+    border: solid 1px;
+    padding: 15px;
+
+}
+.infobtn
+{
+    padding: 9px;
+    background-color: aqua;
+    border-radius: 9px;
+}
+.danger-btn
+{
+    margin-left: 5px;
+    padding: 9px;
+    background-color: rgb(255, 0, 30);
+    border-radius: 9px;
+}

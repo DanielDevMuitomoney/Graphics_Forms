@@ -9,4 +9,5 @@ class RequestModel extends Model
 {
     use HasFactory;
     protected $table='tb_requests';
+    protected $primaryKey = 'id_request';
 }

@@ -178,7 +178,7 @@ public function Request_Product(Request $request)
 }
 public function ShowRequests()
 {
-    $requests= DB::table('tb_requests')->join('tb_products','tb_requests.fk_product','=','tb_products.id_product')->join('tb_status','fk_status','=','id_status')->select(['nm_product','qtd_request_product','nm_status','dt_create'])->get();
+    $requests= DB::table('tb_requests')->join('tb_products','tb_requests.fk_product','=','tb_products.id_product')->join('tb_status','fk_status','=','id_status')->select(['id_request','nm_product','qtd_request_product','nm_status','dt_create'])->where('tb_requests.fk_user_create','=',Auth::user()->id_user)->get();
     
     
     return view('internal_views.user_views.vw_requests',[
@@ -186,5 +186,27 @@ public function ShowRequests()
     ]);
 }
 
+    public function CancelRequest(Request $request)
+    {
+        $request_count = RequestModel::where('id_request',$request->id)->get()->count();
+        if($request_count===1)
+        {
+            
+           RequestModel::where('id_request',$request->id)->update(['fk_status'=>2]);
+           $json['success']=true;
+           echo json_encode($json);
 
+        }
+        //else{}
+        //dd($request);
+    }
+    public function InfoRequest(Request $request)
+    {
+        $request_info= RequestModel::where('id_request',$request->id)->first();
+
+        $request_info= DB::table('tb_requests')->join('tb_products','fk_product','=','id_product')->where('id_request',$request->id)->first();
+    
+//dd($request_info);
+        echo json_encode(['success'=>true,'path_img'=>$request_info->path_img,'qtd_prduct'=>$request_info->qtd_product]);
+    }
 }
